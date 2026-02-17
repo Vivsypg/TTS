@@ -1,27 +1,33 @@
-[frog_tts.py](https://github.com/user-attachments/files/25356501/frog_tts.py)
-import pyttsx3
-import os
 
-# -------- STORY TEXT --------
-text = """
-It was a time when the whole world came to a standstill. Lockdowns were imposed due to the pandemic, and people went a little mad, confined within their homes.
+Frog Story Text-to-Speech API Project
 
-During the second wave, we decided to stay at our farmhouse. It was monsoon, and the entire Western Ghats lay shrouded in a thick veil of fog. Driving was difficult even with the fog lamps on.
+Student: Mahesh
+Class: 8
 
-And then, suddenly, we noticed something. The whole road was writhing. Or so it seemed.
+Description:
+This project converts story text into speech audio using Python Text-to-Speech.
+It exposes an API that can be integrated into websites (Node/Next.js).
 
-The road had come alive because it was full of frogs. Frogs upon frogs, crowding every inch of ground, croaking in unison.
+Technology:
+- Python
+- Flask API
+- pyttsx3 speech engine
+- Next.js frontend integration
 
-That night, we caught a glimpse of the kingdom of frogs.
-"""
+How to run:
 
-engine = pyttsx3.init()
-engine.setProperty('rate', 160)
+1. Install Python
+2. Install requirements:
+   pip install -r requirements.txt
+3. Run API:
+   python tts_api.py
+4. Open browser:
+   http://127.0.0.1:5000
 
-output_path = os.path.expanduser(r"~/Documents/tts_project/frog_story.wav")
+API usage:
+POST /tts
+Body:
+{ "text": "Hello" }
 
-engine.save_to_file(text, output_path)
-engine.runAndWait()
-
-print("Saved:", output_path)
-
+Returns:
+Speech audio file
